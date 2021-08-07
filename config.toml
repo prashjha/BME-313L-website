@@ -1,0 +1,11 @@
+baseURL = 'https://prashjha.github.io/BME-313L-website/'
+title = 'BME 313L'
+theme = 'book'
+publishDir = 'docs'
+
+[menu]
+# [[menu.after]]
+[[menu.before]]
+  name = "Prashant's Homepage"
+  url = "https://prashjha.github.io/"
+  weight = 1

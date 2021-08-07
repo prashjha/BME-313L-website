@@ -1,0 +1,15 @@
+{
+  "name": "BME 313L",
+  "short_name": "BME 313L",
+  "start_url": "/BME-313L-website/",
+  "scope": "/BME-313L-website/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/BME-313L-website/favicon.svg",
+      "sizes": "512x512"
+    }
+  ]
+}
