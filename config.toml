@@ -2,6 +2,7 @@ baseURL = 'https://prashjha.github.io/BME-313L-website/'
 title = 'BME 313L'
 theme = 'book'
 publishDir = 'docs'
+googleAnalytics = "UA-132780463-3"
 
 [menu]
 # [[menu.after]]
