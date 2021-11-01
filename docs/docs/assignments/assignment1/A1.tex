@@ -1,0 +1,54 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\usepackage[a4paper, total={6.5in, 8.5in}]{geometry}
+
+\begin{document}
+
+\begin{center} 
+\textbf{Assignment 1} 
+\end{center}
+
+Consider the following model of growth of cancer cells in a cell culture dish:
+\begin{equation}\label{eq:ode}
+\frac{d N(t)}{d t} = r N(t) \ln\left(\frac{N_\infty}{N(t)}\right) - k h(t) N(t), \qquad \forall 0 < t \leq t_F,
+\end{equation}
+with initial condition
+\begin{equation}
+N(0) = N_0 .
+\end{equation}
+Here, $N = N(t)$ is the number of cancerous cells at time $t$, $r$ the proliferation or growth rate (in units of 1/day), $N_\infty$ a number specifying the maximum number of cells in a dish (carrying capacity), $k$ a number indicating the rate at which drug kills cancer cells (in units of 1/day/g, `g' for gram), and $h = h(t)$ the mass of drug molecules at time t (in units of g). 
+
+In \eqref{eq:ode}, except function $N(t)$, all other parameters such as $N_\infty, N_0, r, k, t_F$ and the function $h(t)$ are given. As a function of $h(t)$, we take  the following `step' function:
+\begin{equation}\label{eq:step}
+h(t) = \begin{cases}
+\bar{h}, \qquad \text{if } 0\leq t < \bar{t}, \\
+0.1\bar{h}, \qquad \text{otherwise} ,
+\end{cases}
+\end{equation}
+where again the values of $\bar{h}$ and $\bar{t}$ are known.
+
+\textit{Remark 1.} The derivation of above function is in a file supplement to this assignment file. 
+
+\textit{Parameter values.} Take $t_F = 20 $ (days), $N_0 = 100$, $N_\infty = 10000$, $r = 0.7$ (1/day), $k = 100$ (1/day/g), $\bar{h} = 0.01$ (g), and $\bar{t} = 0.5t_F$ (days). Further, consider discrete times between $0$ and $t_F$ with spacing $\Delta t = 0.1$ (days). 
+
+\vspace{10pt}
+
+\textbf{Problem 1 (50 marks).} Write down the numerical approximation of \eqref{eq:ode} (similar to the gravity problem worked out in the class) and 
+compute $N(t_F)$ using the parameters specified above. Also, plot the values of $N(t_i)$ at discrete times $t_i$ using MATLAB plot function. 
+
+\vspace{10pt}
+\textit{Remark 2.} If you take $\Delta t = 1$ (days), the number of cancer cells $N(t_F)$ at the final time is about 8670. This should help you in verifying your implementation.
+
+\vspace{10pt}
+\textbf{Problem 2 (20 marks).} Run your code with four different $\Delta t = 1, 0.1, 0.01, 0.001$ and list the value of $N(t_F)$ for each case. 
+
+\vspace{10pt}
+\textbf{Problem 3 (30 marks).} Instead of `step' function for $h$, try another function, say a function that linearly increases from $0$ to $\bar{h}$ from time $0$ to $\bar{t}$, and for time above $\bar{t}$, $h(t) = 0.1\bar{h}$. Using either the new function I just described or your own new function, compute $N(t_F)$ with parameters listed above and with $\Delta t = 0.1$. Compare with the result for `step' function in \eqref{eq:step}. You could try any other function instead of a function described here.
+ 
+\end{document}
